@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamyardo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="banner-overlay"></div>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="assets/logo.jpg" alt="Gamyardo Logo" class="logo" id="logo-img" onerror="this.src='https://via.placeholder.com/50/9b59b6/ffffff?text=G'">
+                <h1>Gamyardo</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#videos">Videos & Files</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h2>Absolute Calmness in Gaming</h2>
+            <p>Welcome to Gamyardo, where simplicity, calmness, and adventure meet.</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="videos" class="videos-section">
+            <h3 class="section-title">Latest Videos & Files</h3>
+            
+            <div class="video-grid">
+                <!-- Video Card 1 -->
+                <div class="video-card" onclick="openModal('video1-modal')">
+                    <div class="video-thumbnail">
+                        <img src="assets/thumb1.jpg" alt="Episode 1 Thumbnail" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="video-info">
+                        <h4>Grounded: 18 FPS to 60 FPS</h4>
+                        <p>Click here to download the files used in this episode.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <h3>About Gamyardo</h3>
+                <p>A channel dedicated to absolute calmness in gaming. We focus on games that give you a sense of relaxation and visual pleasure, especially Grounded, where we live in the simple details of the backyard full of secrets.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>All rights reserved &copy; 2026 Gamyardo</p>
+    </footer>
+
+    <!-- Modal for Video 1 -->
+    <div id="video1-modal" class="modal">
+        <div class="modal-content" style="background-image: linear-gradient(rgba(13, 9, 20, 0.8), rgba(13, 9, 20, 0.95)), url('assets/thumb1.jpg');">
+            <span class="close-btn" onclick="closeModal('video1-modal')">&times;</span>
+            <div class="modal-body">
+                <h2 class="subscribe-text">no ads = Subscribe</h2>
+                <a href="https://drive.google.com/file/d/1Ptr0OKk6CnOuReaYkrpFNMjklDbNQUov/view?usp=sharing" target="_blank" class="download-btn-large">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    download files
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "flex";
+            document.body.style.overflow = "hidden"; // Prevent background scrolling
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        }
+    </script>
+</body>
+</html>
